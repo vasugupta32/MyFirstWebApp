@@ -8,14 +8,6 @@ pipeline {
             }
         }
         
-        stage('Unit Testing') 
-        {
-            steps 
-            {
-                sh "mvn test"
-            }
-        }
-        
         stage('Sonar Analysis') 
         {
             steps 
