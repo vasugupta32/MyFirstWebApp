@@ -7,9 +7,23 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Build') {
-            steps {
-                mvn clean install
+        
+        stage('Unit Testing') 
+        {
+            steps 
+            {
+                sh "mvn test"
+            }
+        }
+        
+        stage('Sonar Analysis') 
+        {
+            steps 
+            {
+                withSonarQubeEnv("sonarserver")
+                {
+                    sh "mvn sonar:sonar"
+                }
             }
         }
         stage('Release') {
