@@ -13,10 +13,7 @@ pipeline {
             }
         }
         
-        stage('Sonar') {
-            steps {
-                 withSonarQubeEnv(credentialsId: 'sonar-api-key') {
-    // some block
+      
 }
             }
         }
