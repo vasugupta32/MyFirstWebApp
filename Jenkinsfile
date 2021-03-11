@@ -12,14 +12,16 @@ pipeline {
                 mvn quietPeriod: 1, job: 'MyFirstWebApp'
             }
         }
-        stage('Deploy') {
-            steps {
-                deploy contextPath: null, war: '**/*.war'
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Testing'
+                no public field ‘gradleBuild’ (or getter method) found in class org.jfrog.hudson.pipeline.scripted.steps.ArtifactoryGradleBuild
+            }
+        }
+        stage('Sonar') {
+            steps {
+                 withSonarQubeEnv(credentialsId: 'sonar-api-key') {
+    // some block
+}
             }
         }
         stage('Release') {
