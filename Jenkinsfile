@@ -12,11 +12,6 @@ pipeline {
                 mvn quietPeriod: 1, job: 'MyFirstWebApp'
             }
         }
-        
-      
-}
-            }
-        }
         stage('Release') {
             steps {
                 echo 'Release'
