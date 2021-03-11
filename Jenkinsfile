@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                build quietPeriod: 1, job: 'MyFirstWebApp'
+                mvn quietPeriod: 1, job: 'MyFirstWebApp'
             }
         }
         stage('Deploy') {
