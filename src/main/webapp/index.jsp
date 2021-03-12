@@ -1,5 +1,5 @@
 <!DOCTYPE> 
-<html>
+<html lang="en">
 <body>
 <h5>Hello World!</h5>
 <h1>addition Program</h1>
