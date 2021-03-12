@@ -37,10 +37,25 @@ pipeline {
         }
         stage('Upload to Artifactory')
         {
-            steps
-            {
-                echo 'Uploading.....'
-            }
+	        steps
+	        {
+		        rtMavenDeployer
+		        {
+		            id: 'deployer' ,
+		            serverId: 'artifactory-server' ,
+		            releaseRepo: 'example-repo-local' ,
+		            snapshotRepo: 'example-repo-local' 
+		        }
+		        rtMavenRun
+		        {
+		        pom: 'pom.xml' ,
+		        goals: 'clean install' ,
+		        deployerId: 'deployer' ,
+		        }
+		        rtPublishBuildInfo (
+		            serverId: 'artifactory-server' ,
+		                )
+	        }
         }
         stage('Release') {
             steps {
