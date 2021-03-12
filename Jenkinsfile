@@ -15,7 +15,7 @@ pipeline {
             {
                 
                 //withSonarQubeEnv("sonarserver")
-                withSonarQubeEnv(credentialsId: 'sonar-api-key') 
+                withSonarQubeEnv(credentialsId: 'sonar-api-key', installationName: 'sonarserver') 
 
                 {
                     bat "mvn sonar:sonar"
