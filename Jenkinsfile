@@ -39,7 +39,7 @@ pipeline {
         {
             steps
             {
-                
+                echo 'Uploading.....'
             }
         }
         stage('Release') {
