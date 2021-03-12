@@ -50,10 +50,10 @@ pipeline {
 		        (
 		        pom: 'pom.xml' ,
 		        goals: 'clean install' ,
-		        deployerId: 'deployer-id' ,
+		        deployerId: 'deployer-id' 
 		        )
 		        rtPublishBuildInfo (
-		            serverId: 'artifactory-server' ,
+		            serverId: 'artifactory-server' 
 		                )
 	        }
         }
