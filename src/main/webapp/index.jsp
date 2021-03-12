@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xml:lang="en">
+<html lang>
+  <head>
+  <title>Some relevant title</title>
+</head>
 <body>
 <h5>Hello World!</h5>
 <h1>addition Program</h1>
