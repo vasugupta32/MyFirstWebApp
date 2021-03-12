@@ -13,10 +13,14 @@ pipeline {
         {
             steps 
             {
-                withSonarQubeEnv("sonarserver")
+                
+                //withSonarQubeEnv("sonarserver")
+                withSonarQubeEnv(credentialsId: 'sonar-api-key') 
+
                 {
                     bat "mvn sonar:sonar"
                 }
+                
             }
         }
         stage('Release') {
