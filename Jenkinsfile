@@ -41,15 +41,15 @@ pipeline {
 	        {
 		        rtMavenDeployer
 		        (
-		            id: 'deployer-id' ,
-		            serverId: 'artifactory-server' ,
-		            releaseRepo: 'example-repo-local' ,
+		            id: 'deployer-id',
+		            serverId: 'artifactory-server',
+		            releaseRepo: 'example-repo-local',
 		            snapshotRepo: 'example-repo-local' 
 		        )
 		        rtMavenRun
 		        (
-		        pom: 'pom.xml' ,
-		        goals: 'clean install' ,
+		        pom: 'pom.xml',
+		        goals: 'clean install',
 		        deployerId: 'deployer-id' 
 		        )
 		        rtPublishBuildInfo (
