@@ -55,6 +55,10 @@ pipeline {
 		                )
 	        }
         }
+	stage('Deploy to Tomcat')
+	{
+		bat "${C:\apache-tomcat-8.5.61\bin}\\startup.bat"
+	}
         stage('Release') {
             steps {
                 echo 'Release'
