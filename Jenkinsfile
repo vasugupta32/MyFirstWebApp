@@ -59,7 +59,7 @@ pipeline {
 	{
 		steps
 		{
-			bat "${C:/apache-tomcat-8.5.61/bin}//startup.bat"
+			"startup.bat"
 		}
 	}
         stage('Release') {
