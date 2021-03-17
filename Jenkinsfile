@@ -14,6 +14,7 @@ pipeline {
             steps 
             {
                 echo 'Hello World'
+		echo 'Building.....'
                 bat 'mvn clean install'
             }
         }
@@ -21,6 +22,7 @@ pipeline {
         {
             steps
             {
+		echo 'Testing....
                 bat 'mvn test'
             }
         }
@@ -28,6 +30,7 @@ pipeline {
         {
             steps 
             {
+		echo 'Sonar Analysis....'
                 //withSonarQubeEnv("sonarserver")
                 withSonarQubeEnv(credentialsId: 'sonar-api-key', installationName: 'sonarserver') 
                 {
@@ -39,6 +42,7 @@ pipeline {
         {
 	        steps
 	        {
+			echo 'Uploading....'
 		        rtMavenDeployer (
     			    id: 'deployer-unique-id',
 		            serverId: 'artifactory-server',
@@ -54,17 +58,11 @@ pipeline {
 		            serverId: 'artifactory-server' 
 		                )
 	        }
-        }
-	stage('Deploy to Tomcat')
-	{
-		steps
-		{
-			"startup.bat"
-		}
 	}
         stage('Release') {
-            steps {
-                echo 'Release'
+            steps 
+	    {
+                echo 'Releasing...'
             }
         }
     }
