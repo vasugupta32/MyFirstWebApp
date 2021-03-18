@@ -18,6 +18,13 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+	stage ('deploy')
+	    {
+		    steps
+		    {
+			    bat 'copy target\\my-first-app-0.0.1-SNAPSHOT.war C:\\apache-tomcat-8.5.61\\webapps\\my-first-app.war'
+		    }
+	    }
         stage('Unit Test')
         {
             steps
