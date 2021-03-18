@@ -23,7 +23,7 @@ pipeline {
 		    steps
 		    {
 			    bat 'dir'
-			    bat 'xcopy target\\*.war C:\\apache-tomcat-8.5.61\\webapps\\my-first-app.war'
+			    bat 'xcopy /S /Q /Y /F target\\*.war C:\\apache-tomcat-8.5.61\\webapps\\'
 		    }
 	    }
         stage('Unit Test')
