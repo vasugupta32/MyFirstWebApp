@@ -24,7 +24,7 @@ pipeline {
 		    {
 			    bat 'dir'
 			    bat 'xcopy /S /Q /Y /F target\\*.war C:\\apache-tomcat-8.5.61\\webapps\\'
-			    bat 'C:\\apache-tomcat-8.5.61\\bin\\catalina.bat restart'
+			    //bat 'C:\\apache-tomcat-8.5.61\\bin\\catalina.bat restart'
 		    }
 	    }
         stage('Unit Test')
